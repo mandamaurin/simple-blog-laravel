@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'DataTables')
+@section('title', 'Tag List')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -15,10 +15,10 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Role List</h1>
+                <h1>Tag List</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item">Role List</div>
+                    <div class="breadcrumb-item"><a href="#">Tag</a></div>
                 </div>
             </div>
 
@@ -29,8 +29,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="col-8">Role List</h4>
-                                <a href="{{ route('role.create') }}" class="btn btn-outline-primary col-4">Add New Role</a>
+                                <h4 class="col-8">Tag List</h4>
+                                <a href="{{ route('tag.create') }}" class="btn btn-outline-primary col-4">Add New Tag</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -70,7 +70,7 @@
         var table = $('.yajra-datatable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('role.list') }}",
+            ajax: "{{ route('tag.list') }}",
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'name', name: 'name'},

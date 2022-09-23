@@ -57,7 +57,7 @@ class RoleController extends Controller
             return $row->name;
         });
         $role_permission_array = $role_permission->toArray();
-
+        
         return view('admin.role.edit', compact('data', 'permissions', 'role_permission_array'));
     }
 

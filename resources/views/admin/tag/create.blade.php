@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Advanced Forms')
+@section('title', 'Add New Tag')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -14,11 +14,11 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Add New Role</h1>
+                <h1>Add New Tag</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="{{ route('role.index') }}">Role</a></div>
-                    <div class="breadcrumb-item">Add New Role</div>
+                    <div class="breadcrumb-item"><a href="{{ route('tag.index') }}">Tags</a></div>
+                    <div class="breadcrumb-item">Add New Tag</div>
                 </div>
             </div>
 
@@ -27,10 +27,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Create Role Form</h4>
+                                <h4>Create Tag Form</h4>
                             </div>
                             <div class="card-body">
-                            <form action="{{ route('role.store') }}" method="POST">
+                            <form action="{{ route('tag.store') }}" method="POST">
                             @csrf
                                 <div class="form-group">
                                     <label>Name</label>
@@ -38,19 +38,11 @@
                                         class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Permission</label>
-                                    <select class="form-control select2" multiple="multiple" name="permissions[]">
-                                        @foreach($permissions as $p)
-                                            <option value="{{ $p->name }}">{{ $p->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit"class="btn btn-primary mr-1"
                                     >Submit</button>
-                                <a href="{{ route('role.index') }}" class="btn btn-secondary"
+                                <a href="{{ route('tag.index') }}" class="btn btn-secondary"
                                     type="reset">Back</a>
                             </div>
                         </form>

@@ -15,11 +15,11 @@
             <li class="menu-header">Blog Management</li>
             <li class="">
                 <a class="nav-link"
-                   href="#"><i class="far fa-square"></i> <span>Category</span></a>
+                   href="{{ route('category.index') }}"><i class="far fa-square"></i> <span>Category</span></a>
             </li>
             <li class="">
                 <a class="nav-link"
-                   href="#"><i class="far fa-square"></i> <span>Tags</span></a>
+                   href="{{ route('tag.index') }}"><i class="far fa-square"></i> <span>Tags</span></a>
             </li>
             <li class="">
                 <a class="nav-link"

@@ -16,8 +16,8 @@
             <div class="section-header">
                 <h1>Edit Role</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">User Management</a></div>
+                    <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="{{ route('role.index') }}">Role</a></div>
                     <div class="breadcrumb-item">Edit Role Name</div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
                                 <div class="form-group">
                                     <label>Permission</label>
                                     <select class="form-control select2" multiple="multiple" name="permissions[]" >
-                                        @foreach($permissions as $p)
-                                            <option value="{{ $p->name }}" {{in_array($role_permission_array, old("permissions") ?: []) ? "selected" : ""}}>{{ $p->name }}</option>
+                                        @foreach($permissions as $p) 
+                                            <option value="{{ $p->name }}" {{ (in_array($p->name, $role_permission_array)) ? 'selected' : '' }}>{{ $p->name }}</option>  
                                         @endforeach
                                     </select>
                                 </div>
